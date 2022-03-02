@@ -1,0 +1,41 @@
+@mixin col($size) {
+  flex: 1 0 auto;
+  width: calc((#{percentage($size / $grid-columns)}) - #{$grid-gap});
+}
+
+@mixin media($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin bp($name) {
+  $width: map-get($grid-breakpoints, $name);
+  @include media($width) {
+    @content;
+  }
+}
+
+@mixin make-space($values, $prefixes, $breakpoints) {
+  @each $breakpoint-name, $breakpoint-value in $breakpoints {
+    @if ($breakpoint-value == 0) {
+      @each $attr-short, $attr-long in $prefixes {
+        @each $value in $values {
+          .#{$breakpoint-name}-#{$attr-short}-#{$value} {
+            #{$attr-long}: #{$value}#{'px'};
+          }
+        }
+      }
+    } @else {
+      @media screen and (min-width: $breakpoint-value) {
+        @each $attr-short, $attr-long in $prefixes {
+          @each $value in $values {
+            .#{$breakpoint-name}-#{$attr-short}-#{$value} {
+              #{$attr-long}: #{$value}#{'px'};
+            }
+          }
+        }
+      }
+    }
+  }
+}

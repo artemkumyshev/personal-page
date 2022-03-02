@@ -1,0 +1,28 @@
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'base/reset';
+@import 'base/grid';
+@import 'base/spacing';
+@import 'base/typography';
+@import 'base/react-grid-layout';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-family-primary;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+body {
+  background: rgb(247, 242, 242);
+}

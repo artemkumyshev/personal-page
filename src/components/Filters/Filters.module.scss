@@ -1,0 +1,32 @@
+.Wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.04);
+  padding: 5px;
+  border-radius: 20px;
+
+  font-size: 14px;
+}
+
+.Option {
+  height: 32px;
+  padding: 0 15px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &_active {
+    position: relative;
+  }
+}
+
+.Highlight {
+  position: absolute;
+  height: 32px;
+  width: 49px;
+  border-radius: 16px;
+  background: rgb(255, 255, 255);
+  transition: all 0.3s ease-in;
+  z-index: -1;
+}

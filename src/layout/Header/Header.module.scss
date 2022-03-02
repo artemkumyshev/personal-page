@@ -1,0 +1,29 @@
+@import '../../styles/abstracts/variables';
+
+.Wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3.5vw;
+}
+
+.Logo {
+  font-family: $font-family-secondary;
+  font-size: 36px;
+
+  background: #f00000;
+  background: linear-gradient(to right, #dc281e, #f00000);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.Actions {
+  display: flex;
+  align-items: center;
+  margin: 0 -10px;
+
+  &__item {
+    margin: 0 10px;
+  }
+}

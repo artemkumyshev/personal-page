@@ -1,0 +1,19 @@
+.Wrapper {
+  display: flex;
+  align-items: center;
+}
+.Option {
+  height: 32px;
+  padding: 0 5px;
+  background-color: transparent;
+  border: none;
+
+  text-transform: uppercase;
+  opacity: 0.5;
+
+  cursor: pointer;
+
+  &_active {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,29 @@
+.container {
+  margin: 0 auto;
+  max-width: $container-max-width;
+  padding: 0 $grid-gap-side;
+}
+
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -$grid-gap-side;
+
+  > * {
+    margin: 0 $grid-gap-side;
+  }
+}
+
+.column {
+  flex: 1 0 0%;
+}
+
+@each $bp, $width in $grid-breakpoints {
+  @include media($width) {
+    @for $i from 1 through $grid-columns {
+      .column-#{$bp}-#{$i} {
+        @include col($i);
+      }
+    }
+  }
+}
