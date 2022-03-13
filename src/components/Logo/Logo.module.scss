@@ -1,0 +1,50 @@
+@import '../../styles/main.scss';
+
+.Logo {
+  position: relative;
+  display: block;
+  padding: 0;
+  margin: 0;
+  font-family: $font-family-secondary;
+  font-size: get-vw(36px);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  counter-reset: rainbow;
+  list-style: none;
+
+  z-index: 1;
+
+  &__layer {
+    counter-increment: rainbow;
+    color: #fff;
+
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+      1px 1px 0 #000, 4px 4px 0 rgba(0, 0, 0, 0.2);
+
+    animation: rainbow 1.5s ease-in-out infinite;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        animation-delay: calc(#{$i} / 10 * 1s);
+        left: calc(1px * #{$i});
+        z-index: -#{$i * 10};
+      }
+    }
+
+    &:not(:first-child) {
+      position: absolute;
+      top: 0;
+    }
+  }
+}
+
+@keyframes rainbow {
+  0%,
+  100% {
+    transform: translatey(0.7rem);
+  }
+  50% {
+    transform: translatey(calc(0.7rem * -1));
+  }
+}

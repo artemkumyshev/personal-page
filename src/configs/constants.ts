@@ -19,8 +19,8 @@ export const DATA_LANGUAGE: LanguageMap<IDataLanguage[]> = {
 };
 
 export const DATA_LOGO = {
-  ru: 'Кумышев А.Ю.',
-  en: 'Kumyshev A.Y.',
+  ru: 'Kumyshev',
+  en: 'Kumyshev',
 };
 
 export const DATA_OPTIONS = {

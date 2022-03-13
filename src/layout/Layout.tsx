@@ -16,9 +16,10 @@ export const Layout: React.FC<LayoutProps> = ({
 }): React.ReactElement => {
   return (
     <div className={styles.Wrapper} {...props}>
+      <div className={styles.Aside}></div>
       <Header className={styles.Header} />
-      <main>{children}</main>
-      <footer>footer</footer>
+      <main className={styles.Main}>{children}</main>
+      <footer className={styles.Footer}>footer</footer>
     </div>
   );
 };

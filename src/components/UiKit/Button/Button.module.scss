@@ -1,0 +1,71 @@
+@import '../../../styles/main.scss';
+
+.Button {
+  display: inline-block;
+  min-height: get-vw(36px);
+  min-width: get-vw(96px);
+  padding: get-vw(8px) get-vw(16px);
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  color: inherit;
+  font-weight: 600;
+
+  background-color: var(#{--button-default-color});
+
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(#{--button-default-hover-color});
+  }
+
+  &:active {
+    background-color: var(#{--button-default-active-color});
+  }
+
+  &:focus {
+    box-shadow: 0px 0px 0px get-vw(1px) var(#{--body-background}),
+      0px 0px 0px get-vw(3px) rgba(17, 81, 243, 0.2);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &_theme-primary {
+    color: var(--white-color);
+    background-color: var(#{--button-primary-color});
+
+    &:hover {
+      background-color: var(#{--button-primary-hover-color});
+    }
+
+    &:active {
+      background-color: var(#{--button-primary-active-color});
+    }
+  }
+
+  &_icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: auto;
+    width: get-vw(36px);
+    height: get-vw(36px);
+    padding: get-vw(5px);
+  }
+
+  &_with-icon {
+    display: flex;
+    align-items: center;
+
+    svg,
+    img,
+    i {
+      font-style: normal;
+      margin: 0 get-vw(5px);
+    }
+  }
+}

@@ -1,5 +1,25 @@
+@import '../styles/main.scss';
+
 .Wrapper {
+  position: relative;
   display: grid;
-  grid-template-rows: 140px 1fr 100px;
+  grid-template-columns: get-vw(150px) get-vw(50px) 1fr get-vw(100px);
+  grid-template-rows: get-vw(100px) 1fr get-vw(50px);
+  grid-template-areas: ' aside . header . ' ' aside . main . ' ' footer footer footer footer ';
   min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.Aside {
+  grid-area: aside;
+}
+.Header {
+  grid-area: header;
+}
+.Main {
+  grid-area: main;
+}
+.Footer {
+  grid-area: footer;
+  background-color: #e26142;
 }
